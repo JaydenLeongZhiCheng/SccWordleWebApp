@@ -119,19 +119,23 @@ public class Game {
      *                                  it's not a real 5-letter word.
      */
     public GuessResult submitGuess(String guess) {
-        if (isGameOver())
-            throw new GameAlreadyOverException("Game is already over");
-        if (!guessDictionary.contains(guess))
-            throw new IllegalWordException("Invalid word provided");
-        GuessResult result = new GuessResult(guess, answer);
-        if (result.isCorrect())
-            gameStatus = WIN;
-        else if (guessesRemaining <= 1)
-            gameStatus = LOSS;
-        guessesRemaining--;
+    if (isGameOver())
+        throw new GameAlreadyOverException("The game has already ended. Please start a new game to continue.");
 
-        return result;
-    }
+    if (!guessDictionary.contains(guess))
+        throw new IllegalWordException("Oops! \"" + guess + "\" is not a valid word. Please try a different guess.");
+
+    GuessResult result = new GuessResult(guess, answer);
+
+    if (result.isCorrect())
+        gameStatus = WIN;
+    else if (guessesRemaining <= 1)
+        gameStatus = LOSS;
+
+    guessesRemaining--;
+
+    return result;
+   }
 
     private static void validate(Dictionary guessDictionary, String answer, int guessesRemaining, GameStatus gameStatus) {
         validateGuessDictionary(guessDictionary);
