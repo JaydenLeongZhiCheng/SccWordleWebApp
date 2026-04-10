@@ -23,6 +23,19 @@ public class WordValidatorTest {
         assertFalse(wordValidator.isValidWord("DOG"));
     }
 
+// Add new test case
+    @Test 
+    public void isValidWord_caseInsensitivity() { 
+        assertTrue(wordValidator.isValidWord("LIONS")); 
+        assertTrue(wordValidator.isValidWord("lions")); 
+        assertTrue(wordValidator.isValidWord("LiOnS")); 
+    } 
+// Add new test case
+     @Test 
+    public void isValidWord_mixedCaseAndLength() { 
+        assertFalse(wordValidator.isValidWord("dOgGiE"));  
+    } 
+
     @Test
     void isCorrectLength_True() {
         String word = "lions";
