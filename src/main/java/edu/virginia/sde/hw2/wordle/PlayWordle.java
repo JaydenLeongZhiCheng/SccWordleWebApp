@@ -35,8 +35,8 @@ public class PlayWordle {
 
     private static void displayWinLossMessage() {
     if (game.getGameStatus() == GameStatus.WIN) {
-        System.out.printf("Amazing! You cracked the word in %d guesses! You're a word master!\n",
-                Game.STARTING_GUESSES - game.getGuessesRemaining());
+        System.out.printf("Great job! You found the word in %d guesses. Keep it up!\n",
+        Game.STARTING_GUESSES - game.getGuessesRemaining());
     } else {
         System.out.printf("You ran out of guesses! The word was \"%s\". Try again and conquer it!\n",
                 game.getAnswer());
