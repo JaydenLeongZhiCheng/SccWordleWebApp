@@ -19,6 +19,7 @@ public class WordValidator {
      * Returns false if *either* condition is false.
      */
     public boolean isValidWord(String word) {
+        word = word.toUpperCase();
         return isCorrectLength(word) && isAllLetters(word);
     }
 
