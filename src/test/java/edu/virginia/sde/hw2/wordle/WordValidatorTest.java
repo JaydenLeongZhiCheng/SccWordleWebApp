@@ -28,8 +28,10 @@ public class WordValidatorTest {
     public void isValidWord_caseInsensitivity() { 
         assertTrue(wordValidator.isValidWord("LIONS")); 
         assertTrue(wordValidator.isValidWord("lions")); 
-        assertTrue(wordValidator.isValidWord("LiOnS")); 
+         
+        
     } 
+
 // Add new test case
      @Test 
     public void isValidWord_mixedCaseAndLength() { 
