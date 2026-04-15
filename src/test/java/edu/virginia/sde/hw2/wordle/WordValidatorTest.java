@@ -28,7 +28,7 @@ public class WordValidatorTest {
     public void isValidWord_caseInsensitivity() { 
         assertTrue(wordValidator.isValidWord("LIONS")); 
         assertTrue(wordValidator.isValidWord("lions")); 
-         
+        assertTrue(wordValidator.isValidWord("LiOnS")); 
         
     } 
 
