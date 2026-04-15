@@ -34,14 +34,13 @@ public class PlayWordle {
     }
 
     private static void displayWinLossMessage() {
-    if (game.getGameStatus() == GameStatus.WIN) {
-        System.out.printf("Amazing! You cracked the word in %d guesses! You're a word master!\n",
-                Game.STARTING_GUESSES - game.getGuessesRemaining());
-    } else {
-        System.out.printf("You ran out of guesses! The word was \"%s\". Try again and conquer it!\n",
-                game.getAnswer());
+        if (game.getGameStatus() == GameStatus.WIN) {
+            System.out.printf("Congratulations! You won! You took %d guesses\n",
+                    Game.STARTING_GUESSES - game.getGuessesRemaining());
+        } else {
+            System.out.printf("I'm sorry, you lost! The correct word was %s.\n", game.getAnswer());
+        }
     }
-}
 
     private static boolean isPlayingAgain() {
         while (true) {
