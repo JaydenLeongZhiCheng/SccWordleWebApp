@@ -35,6 +35,7 @@ public class PlayWordle {
 
     private static void displayWinLossMessage() {
     if (game.getGameStatus() == GameStatus.WIN) {
+      
         System.out.printf("Great job! You found the word in %d guesses. Keep it up!\n",
         Game.STARTING_GUESSES - game.getGuessesRemaining());
     } else {
