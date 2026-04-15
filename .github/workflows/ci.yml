@@ -42,7 +42,7 @@ jobs:
 
       - name: Build with Gradle
         run: gradle clean build
-        working-directory: SccWordleWebApp
+      
 
       - name: Run tests
         run: gradle test --stacktrace
